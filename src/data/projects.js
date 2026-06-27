@@ -63,6 +63,39 @@ const projects = [
 		liveUrl: "",
 		featured: true,
 	},
+	{
+		title: "Portfolio Manager Capstone",
+		slug: "portfolio-manager-capstone",
+		summary:
+			"A full-stack capstone project for managing startup, investor, portfolio, and financial data workflows.",
+		problem:
+			"Startup and investor information can become difficult to manage when profile data, investor relationships, cap tables, and financial metrics are handled across separate tools or manual workflows.",
+		solution:
+			"Worked on the backend, database structure, frontend-to-backend connection, and Codat integration for a full-stack portfolio management application built with a Node.js backend and React frontend.",
+		description:
+			"Worked on the backend side of a capstone portfolio management application designed to support startup and investor workflows. My work focused on creating the database structure, building backend API functionality, connecting frontend workflows to backend services, and supporting a Codat integration for financial data such as profit-and-loss and balance sheet information.",
+		tech: [
+			"Node.js",
+			"Express",
+			"React",
+			"Prisma",
+			"MongoDB",
+			"Codat API",
+			"JWT",
+			"JavaScript",
+		],
+		highlights: [
+			"Worked on the backend API structure for a full-stack capstone application",
+			"Created database models for users, investors, startups, posts, cap table data, and related portfolio information",
+			"Helped connect frontend workflows with backend API routes",
+			"Supported authenticated backend routes using JWT-based access control",
+			"Built integration logic for retrieving financial data through the Codat API",
+			"Handled backend support for startup profiles, investor relationships, cap table data, KPIs, and financial reporting views",
+		],
+		githubUrl: "https://github.com/theweak1/Portfolio-Manager",
+		liveUrl: "",
+		featured: true,
+	},
 ];
 
 export default projects;
