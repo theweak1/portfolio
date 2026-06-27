@@ -1,0 +1,14 @@
+<% projects.forEach(project => { %>
+  <article class="project-card">
+    <h2><%= project.title %></h2>
+    <p><%= project.description %></p>
+
+    <ul>
+      <% project.tech.forEach(item => { %>
+        <li><%= item %></li>
+      <% }) %>
+    </ul>
+
+    <a href="<%= project.githubUrl %>">View Project</a>
+  </article>
+<% }) %>

@@ -1,0 +1,23 @@
+{
+	"name": "portfolio",
+	"version": "1.0.0",
+	"description": "Server-side rendered portfolio built with Node.js, Express, and EJS.",
+	"main": "src/server.js",
+	"scripts": {
+		"dev": "node --watch src/server.js",
+		"start": "node src/server.js"
+	},
+	"keywords": [
+		"portfolio",
+		"express",
+		"ejs",
+		"ssr"
+	],
+	"author": "Lenier Ortiz",
+	"license": "ISC",
+	"type": "commonjs",
+	"dependencies": {
+		"ejs": "^6.0.1",
+		"express": "^5.2.1"
+	}
+}
