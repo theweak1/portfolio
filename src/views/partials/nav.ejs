@@ -1,0 +1,31 @@
+<header class="site-header">
+	<nav class="nav container" aria-label="Primary navigation">
+		<a class="brand" href="/" aria-label="Home"><%= profile.name %></a>
+		<button
+			class="nav-toggle"
+			type="button"
+			aria-label="Toggle navigation"
+			aria-expanded="false"
+		>
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+		<div class="nav-links" data-nav-links>
+			<a class="<%= currentPath === '/' ? 'active' : '' %>" href="/">Home</a>
+			<a
+				class="<%= currentPath === '/projects' ? 'active' : '' %>"
+				href="/projects"
+				>Projects</a
+			>
+			<a class="<%= currentPath === '/about' ? 'active' : '' %>" href="/about"
+				>About</a
+			>
+			<a
+				class="<%= currentPath === '/contact' ? 'active' : '' %>"
+				href="/contact"
+				>Contact</a
+			>
+		</div>
+	</nav>
+</header>

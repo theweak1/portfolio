@@ -1,23 +1,54 @@
 const router = require("express").Router();
+const projects = require("../data/projects");
+const profile = require("../data/profile");
+
+const basePageData = (req, overrides = {}) => ({
+	profile,
+	currentPath: req.path,
+	...overrides,
+});
 
 router.get("/", (req, res) => {
-	// Logic to fetch and return home page data
-	res.json({ message: "Welcome to the home page" });
+	res.render(
+		"index",
+		basePageData(req, {
+			title: `${profile.name} | ${profile.title}`,
+			description: profile.description,
+			featuredProjects: projects.filter((project) => project.featured),
+		}),
+	);
 });
 
 router.get("/about", (req, res) => {
-	// Logic to fetch and return about page data
-	res.json({ message: "About us page" });
-});
-
-router.get("/contact", (req, res) => {
-	// Logic to fetch and return contact page data
-	res.json({ message: "Contact us page" });
+	res.render(
+		"about",
+		basePageData(req, {
+			title: `About | ${profile.name}`,
+			description: `Learn more about ${profile.name}'s software engineering and automation background.`,
+		}),
+	);
 });
 
 router.get("/projects", (req, res) => {
-	// Logic to fetch and return projects
-	res.json({ message: "List of projects" });
+	res.render(
+		"projects",
+		basePageData(req, {
+			title: `Projects | ${profile.name}`,
+			description:
+				"A collection of software, automation, and technical documentation projects.",
+			projects,
+		}),
+	);
+});
+
+router.get("/contact", (req, res) => {
+	res.render(
+		"contact",
+		basePageData(req, {
+			title: `Contact | ${profile.name}`,
+			description: `Contact ${profile.name} for software engineering and automation opportunities.`,
+		}),
+	);
 });
 
 module.exports = router;
