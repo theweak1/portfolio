@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import profile from "../../data/profile.js";
+import projects from "../../data/projects.js";
+
+export function getStaticPaths() {
+	return projects.map((project) => ({
+		params: { slug: project.slug },
+		props: { project },
+	}));
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout
+	title={`${project.title} | ${profile.name}`}
+	description={project.summary}
+	currentPath="/projects"
+>
+	<main class="section page-top">
+		<div class="container section-heading">
+			<p class="eyebrow">Case Study</p>
+			<h1>{project.title}</h1>
+			<p>{project.summary}</p>
+			<div class="project-actions">
+				<a class="button secondary" href="/projects">Back to Projects</a>
+				{
+					project.githubUrl && (
+						<a
+							class="button primary"
+							href={project.githubUrl}
+							target="_blank"
+							rel="noreferrer"
+						>
+							View GitHub
+						</a>
+					)
+				}
+			</div>
+		</div>
+
+		<div class="container case-study-grid">
+			<section class="case-study-panel">
+				<p class="eyebrow">Problem</p>
+				<h2>What needed to be solved</h2>
+				<p>{project.problem}</p>
+			</section>
+
+			<section class="case-study-panel">
+				<p class="eyebrow">Solution</p>
+				<h2>How I approached it</h2>
+				<p>{project.solution}</p>
+			</section>
+
+			<section class="case-study-panel">
+				<p class="eyebrow">Highlights</p>
+				<h2>What it demonstrates</h2>
+				<ul class="check-list">
+					{project.highlights.map((item) => <li>{item}</li>)}
+				</ul>
+			</section>
+
+			<section class="case-study-panel">
+				<p class="eyebrow">Tech Stack</p>
+				<h2>Tools used</h2>
+				<div class="tech-stack" aria-label={`${project.title} tech stack`}>
+					{project.tech.map((item) => <span class="tech-badge">{item}</span>)}
+				</div>
+			</section>
+		</div>
+	</main>
+</BaseLayout>
