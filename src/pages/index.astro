@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import profile from "../data/profile.js";
+import projects from "../data/projects.js";
+
+const featuredProjects = projects.filter((project) => project.featured);
+---
+
+<BaseLayout title={`${profile.name} | ${profile.title}`} description={profile.headline}>
+  <main>
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Software Engineering · Automation · Technical Systems</p>
+          <h1>{profile.role}</h1>
+          <p class="hero-copy">{profile.headline}</p>
+          <div class="hero-actions">
+            <a class="button primary" href="/projects">View Projects</a>
+            <a class="button secondary" href="/contact">Contact Me</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Portfolio summary">
+          <h2>Focus Areas</h2>
+          <ul class="check-list">
+            <li>Automation tools</li>
+            <li>Configuration-driven workflows</li>
+            <li>Manufacturing system support</li>
+            <li>Technical documentation</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section muted">
+      <div class="container section-heading">
+        <p class="eyebrow">Featured Work</p>
+        <h2>Projects that show practical engineering</h2>
+        <p>These projects highlight software development, automation, troubleshooting, and clear technical communication.</p>
+      </div>
+
+      <div class="container project-grid">
+        {featuredProjects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container skills-panel">
+        <div>
+          <p class="eyebrow">Skills</p>
+          <h2>Tools and strengths</h2>
+        </div>
+        <div class="skill-list">
+          {profile.skills.map((skill) => <span>{skill}</span>)}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

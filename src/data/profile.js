@@ -1,4 +1,4 @@
-module.exports = {
+const profile = {
 	name: "Lenier Ortiz",
 	title: "Computer engineer",
 	role: "Software Engineer & Design Automation Engineer",
@@ -19,3 +19,5 @@ module.exports = {
 		"Manufacturing Systems",
 	],
 };
+
+export default profile;

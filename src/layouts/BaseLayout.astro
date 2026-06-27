@@ -1,0 +1,28 @@
+---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import profile from "../data/profile.js";
+import "../styles/global.css";
+
+const {
+  title = `${profile.name} | ${profile.role}`,
+  description = profile.headline,
+  currentPath = Astro.url.pathname,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Nav profile={profile} currentPath={currentPath} />
+    <slot />
+    <Footer profile={profile} />
+    <script src="/js/main.js" is:inline ></script>
+  </body>
+</html>

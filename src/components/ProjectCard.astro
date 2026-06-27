@@ -1,0 +1,13 @@
+---
+const { project } = Astro.props;
+---
+
+<article class="project-card">
+	<div class="tech-stack compact" aria-label={`${project.title} tech stack`}>
+		{project.tech.map((item) => <span class="tech-badge">{item}</span>)}
+	</div>
+
+	<h3>{project.title}</h3>
+	<p>{project.summary}</p>
+	<a class="text-link" href={`/projects/${project.slug}`}>Read case study</a>
+</article>

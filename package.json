@@ -1,24 +1,27 @@
 {
 	"name": "portfolio",
 	"version": "1.0.0",
-	"description": "Server-side rendered portfolio built with Node.js, Express, and EJS.",
-	"main": "src/server.js",
+	"description": "Portfolio built with Astro.",
+	"type": "module",
 	"scripts": {
-		"dev": "node --watch src/server.js",
-		"start": "node src/server.js"
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview"
 	},
 	"keywords": [
 		"portfolio",
-		"express",
-		"ejs",
-		"ssr"
+		"astro",
+		"static-site",
+		"software-engineering"
 	],
 	"author": "Lenier Ortiz",
 	"license": "ISC",
-	"type": "commonjs",
 	"dependencies": {
-		"ejs": "^6.0.1",
-		"express": "^5.2.1",
-		"dotenv": "^17.2.3"
+		"astro": "^7.0.3"
+	},
+	"allowScripts": {
+		"esbuild@0.28.1": true,
+		"sharp@0.34.5": true
 	}
 }
