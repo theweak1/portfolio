@@ -3,9 +3,9 @@ const projects = [
 		title: "File Maintenance Automation Tool",
 		slug: "file-maintenance-automation-tool",
 		summary:
-			"A Go-based automation tool for safe file cleanup and backup workflows using configurable rules.",
+			"A Go-based automation tool that safely cleans up and backs up files using configurable rules.",
 		description:
-			"Built to automate recurring file maintenance tasks that would otherwise require manual cleanup. The project focuses on safe file handling, configuration-driven behavior, cross-platform structure, and maintainable documentation.",
+			"Built to reduce repetitive manual file maintenance work by automating cleanup and backup behavior through a configurable workflow. The project focuses on safe file handling, runtime limits, file-age based processing, cross-platform structure, and maintainable documentation.",
 		tech: [
 			"Go",
 			"PowerShell",
@@ -14,10 +14,11 @@ const projects = [
 			"INI Configuration",
 		],
 		highlights: [
-			"Configuration-driven cleanup and backup behavior",
-			"Runtime limit and file-age based processing",
-			"Platform abstraction for Windows, Linux, and macOS support",
-			"Automated tests around core file-processing behavior",
+			"Built configurable cleanup and backup behavior using an INI-based setup",
+			"Added runtime limits and file-age checks to control how files are processed",
+			"Designed a platform abstraction for Windows, Linux, and macOS support",
+			"Added automated tests around the core file-processing behavior",
+			"Documented setup, configuration, and scheduled execution steps",
 		],
 		githubUrl: "https://github.com/theweak1/file-maintenance",
 		liveUrl: "",
@@ -27,36 +28,22 @@ const projects = [
 		title: "Manufacturing System Investigation Support",
 		slug: "manufacturing-system-investigation-support",
 		summary:
-			"Public-safe case study showing technical analysis, process control thinking, and documentation clarity.",
+			"A public-safe case study focused on technical investigation, automation behavior, and process control analysis.",
 		description:
-			"Supported technical investigation documentation for a manufacturing automation process involving configuration control, parameter verification, access levels, and release-readiness checks. The public version avoids confidential company, product, and system details.",
+			"Supported technical investigation documentation for a manufacturing automation process involving configuration control, parameter verification, access levels, and release-readiness checks. The case study focuses on how system behavior, user access, and process controls were evaluated while avoiding confidential company, product, and system details.",
 		tech: [
 			"Technical Writing",
 			"Process Analysis",
 			"Automation Systems",
 			"Quality Documentation",
+			"Root Cause Analysis",
 		],
 		highlights: [
-			"Clarified complex system behavior for technical reviewers",
-			"Explained control gaps without exposing confidential details",
-			"Connected software behavior, user access, and process controls",
-		],
-		githubUrl: "",
-		liveUrl: "",
-		featured: true,
-	},
-	{
-		title: "Outlook Rule Configuration Recovery",
-		slug: "outlook-rule-configuration-recovery",
-		summary:
-			"Analyzed exported rule configuration data to recreate legacy email automation rules.",
-		description:
-			"Reviewed legacy Outlook rule data to recover the intended conditions, actions, and routing behavior so the rules could be rebuilt in a newer Outlook environment.",
-		tech: ["Configuration Analysis", "Troubleshooting", "Workflow Automation"],
-		highlights: [
-			"Recovered rule intent from exported configuration data",
-			"Converted hard-to-read rule data into rebuildable settings",
-			"Improved continuity after migration to a newer client",
+			"Clarified complex automation behavior for technical and quality reviewers",
+			"Connected software behavior, access levels, and process controls in a clear narrative",
+			"Explained control gaps without exposing confidential information",
+			"Improved the structure and readability of investigation documentation",
+			"Supported a public-safe version suitable for portfolio presentation",
 		],
 		githubUrl: "",
 		liveUrl: "",

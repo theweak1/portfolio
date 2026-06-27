@@ -7,7 +7,7 @@ module.exports = {
 	location: "Puerto Rico",
 	email: "lenier543@gmail.com",
 	github: "https://github.com/theweak1",
-	linkedin: "",
+	linkedin: "https://pr.linkedin.com/in/lenier-ortiz-rodriguez-089b3a26b",
 	skills: [
 		"Node.js",
 		"Express",
