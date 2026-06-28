@@ -912,3 +912,74 @@ code {
 		align-items: flex-start;
 	}
 }
+
+.contact-page .contact-grid {
+	align-items: start;
+}
+
+.contact-intro {
+	max-width: 740px;
+	font-size: clamp(1.1rem, 2vw, 1.25rem);
+}
+
+.contact-detail-list {
+	display: grid;
+	gap: 16px;
+}
+
+.contact-detail {
+	display: grid;
+	gap: 4px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid var(--border);
+}
+
+.contact-detail:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.contact-label {
+	color: var(--muted);
+	font-size: 0.82rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.contact-panels {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 18px;
+}
+
+.contact-panel {
+	padding: 28px;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.08),
+		rgba(255, 255, 255, 0.04)
+	);
+	border: 1px solid var(--border);
+	border-radius: 28px;
+	box-shadow: var(--shadow);
+}
+
+.contact-panel h3,
+.contact-panel p {
+	margin-bottom: 0;
+}
+
+.contact-panel .check-list li:first-child {
+	margin-top: 0;
+}
+
+.contact-panel .check-list li:last-child {
+	margin-bottom: 0;
+}
+
+@media (max-width: 820px) {
+	.contact-panels {
+		grid-template-columns: 1fr;
+	}
+}

@@ -1,32 +1,109 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import profile from "../data/profile.js";
+
+const emailSubject = encodeURIComponent("Portfolio inquiry");
+const emailBody = encodeURIComponent(
+  `Hi ${profile.name},\n\nI saw your portfolio and wanted to reach out about...\n\nProject / opportunity summary:\nTimeline:\nBest way to respond:\n`,
+);
+const emailHref = `mailto:${profile.email}?subject=${emailSubject}&body=${emailBody}`;
 ---
 
 <BaseLayout
   title={`Contact | ${profile.name}`}
   description={`Contact ${profile.name} for software engineering and automation opportunities.`}
 >
-  <main class="section page-top">
-    <div class="container contact-grid">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h1>Let’s connect.</h1>
+  <main>
+    <section class="section page-top contact-page">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h1>Let’s build something useful.</h1>
+          <p class="contact-intro">
+            I am open to software engineering, automation, and technical workflow
+            projects where practical problem-solving matters.
+          </p>
+          <p>
+            The best fit is work that connects code with real operations: internal
+            tools, process automation, configuration-driven workflows, reporting,
+            and clear technical documentation.
+          </p>
+
+          <div class="hero-actions" aria-label="Primary contact actions">
+            <a class="button primary" href={emailHref}>Email Me</a>
+            <a class="button secondary" href="/projects">View Projects</a>
+          </div>
+        </div>
+
+        <section class="contact-card" aria-label="Contact links">
+          <h2>Contact details</h2>
+          <div class="contact-detail-list">
+            <div class="contact-detail">
+              <span class="contact-label">Email</span>
+              <a href={emailHref}>{profile.email}</a>
+            </div>
+
+            {profile.linkedin && (
+              <div class="contact-detail">
+                <span class="contact-label">LinkedIn</span>
+                <a href={profile.linkedin} target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+              </div>
+            )}
+
+            {profile.github && (
+              <div class="contact-detail">
+                <span class="contact-label">GitHub</span>
+                <a href={profile.github} target="_blank" rel="noreferrer">View my code</a>
+              </div>
+            )}
+          </div>
+          <p class="small-note">
+            Located in {profile.location}. Available for professional opportunities,
+            technical collaboration, and project conversations.
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <section class="section muted">
+      <div class="container section-heading">
+        <p class="eyebrow">Before you reach out</p>
+        <h2>What I can help with</h2>
         <p>
-          I am open to software engineering, automation, and technical workflow projects where practical problem-solving matters.
+          A little context helps turn the first message into a productive conversation.
         </p>
       </div>
 
-      <section class="contact-card" aria-label="Contact links">
-        <h2>Links</h2>
-        <a href={`mailto:${profile.email}`}>{profile.email}</a>
-        {profile.github && <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>}
-        {profile.linkedin ? (
-          <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-        ) : (
-          <p class="small-note">Add your LinkedIn URL in <code>src/data/profile.js</code>.</p>
-        )}
-      </section>
-    </div>
+      <div class="container contact-panels">
+        <article class="contact-panel">
+          <h3>Project fit</h3>
+          <ul class="check-list">
+            <li>Automation tools and scripts</li>
+            <li>Internal workflow improvements</li>
+            <li>Configuration-driven applications</li>
+            <li>Technical documentation and handoff support</li>
+          </ul>
+        </article>
+
+        <article class="contact-panel">
+          <h3>Useful details to include</h3>
+          <ul class="check-list">
+            <li>What problem you are trying to solve</li>
+            <li>Current process, tool, or system involved</li>
+            <li>Expected timeline or urgency</li>
+            <li>Any technical constraints I should know about</li>
+          </ul>
+        </article>
+
+        <article class="contact-panel">
+          <h3>Working style</h3>
+          <p>
+            I like projects with clear goals, practical constraints, and measurable
+            improvements. My focus is building solutions that are maintainable,
+            understandable, and useful after the first version is delivered.
+          </p>
+        </article>
+      </div>
+    </section>
   </main>
 </BaseLayout>
