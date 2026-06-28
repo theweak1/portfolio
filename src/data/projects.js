@@ -96,6 +96,39 @@ const projects = [
 		liveUrl: "",
 		featured: true,
 	},
+	{
+		title: "Auto Finance Processor",
+		slug: "auto-finance-processor",
+		summary:
+			"A Python automation tool that classifies bank CSV transactions and uploads them into Google Sheets.",
+		problem:
+			"Tracking personal finances from monthly bank CSV exports can become repetitive and error-prone when transactions must be manually categorized, entered into monthly sheets, summarized, and archived.",
+		solution:
+			"Built a Python automation script that processes monthly bank CSV files, applies configurable categorization rules, uploads transactions into Google Sheets, updates finance summaries, prevents duplicate processing, and archives completed files.",
+		description:
+			"Built to automate personal finance tracking by converting monthly bank CSV exports into structured Google Sheets records. The project uses configurable rules to categorize transactions, sends each month to the correct worksheet, avoids reprocessing files that were already handled, updates summary information, and archives completed files for traceability.",
+		tech: [
+			"Python",
+			"Google Sheets API",
+			"gspread",
+			"CSV Processing",
+			"JSON Configuration",
+			"Automation",
+		],
+		highlights: [
+			"Automated transaction import from monthly bank CSV files",
+			"Applied custom categorization rules using configurable JSON settings",
+			"Uploaded categorized transactions into month-specific Google Sheets tabs",
+			"Prevented duplicate processing by tracking completed files",
+			"Updated yearly summary information from spreadsheet data",
+			"Archived processed CSV files into year-based Completed folders",
+			"Protected local configuration and service-account credentials through ignored files",
+		],
+		githubUrl: "https://github.com/theweak1/auto-finance",
+		liveUrl: "",
+		featured: true,
+	},
+
 ];
 
 export default projects;
